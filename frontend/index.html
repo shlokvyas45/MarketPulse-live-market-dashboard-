@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Live Market Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+
+        <header class="dashboard-header">
+
+            <h1>Live Market Dashboard</h1>
+
+            <p>
+                Track stocks, crypto and other assets in real time
+            </p>
+
+        </header>
+
+
+        <!-- Search -->
+
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search asset (e.g. RELIANCE, BTC)"
+            >
+
+            <button id="search-btn">
+                Add
+            </button>
+
+        </section>
+
+
+        <!-- Search results -->
+
+        <section
+            id="search-results"
+            class="search-results"
+        ></section>
+
+
+        <!-- Watchlist -->
+
+        <section class="watchlist-section">
+
+            <h2>My Watchlist</h2>
+
+
+            <div
+                id="market-grid"
+                class="market-grid"
+            >
+
+                <!-- Assets will be added here by JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- Status -->
+
+        <section class="status">
+
+            <span class="status-dot"></span>
+
+            <span id="status-text">
+                Connecting to market server...
+            </span>
+
+        </section>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

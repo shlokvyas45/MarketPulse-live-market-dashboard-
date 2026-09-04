@@ -1,0 +1,477 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
+}
+
+
+.dashboard {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* =================================
+   Header
+   ================================= */
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+
+.dashboard-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+
+.dashboard-header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* =================================
+   Search
+   ================================= */
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+#search-input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+
+#search-input:focus {
+    border-color: #2563eb;
+}
+
+
+#search-btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#search-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =================================
+   Search Results
+   ================================= */
+
+.search-results {
+    margin-bottom: 25px;
+}
+
+
+.search-result {
+    background: white;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+.search-result:hover {
+    background: #f9fafb;
+}
+
+
+/* =================================
+   Watchlist
+   ================================= */
+
+.watchlist-section h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =================================
+   Market Cards
+   ================================= */
+
+.market-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.asset-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.asset-name h2 {
+    font-size: 18px;
+}
+
+
+.asset-name span {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.asset-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+.asset-change {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.positive {
+    color: #16a34a;
+}
+
+
+.negative {
+    color: #dc2626;
+}
+
+
+/* =================================
+   Empty Watchlist
+   ================================= */
+
+.empty-message {
+    color: #6b7280;
+    padding: 20px 0;
+}
+
+
+/* =================================
+   Status
+   ================================= */
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    color: #555;
+    font-size: 14px;
+}
+
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #22c55e;
+    border-radius: 50%;
+
+    animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =================================
+   Remove Button
+   ================================= */
+
+.remove-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #ef4444;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.remove-btn:hover {
+    background: #ef4444;
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(239, 68, 68, 0.25);
+}
+
+
+.remove-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* =================================
+   Price Chart
+   ================================= */
+
+.price-chart {
+    width: 100%;
+    height: 140px;
+
+    margin-top: 18px;
+    padding: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    /*
+       IMPORTANT:
+       This makes the tooltip position
+       itself relative to the chart.
+    */
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =================================
+   SVG Line Chart
+   ================================= */
+
+.price-line-chart {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+/* =================================
+   Chart Grid
+   ================================= */
+
+.chart-grid-line {
+    stroke: #e5e7eb;
+    stroke-width: 1;
+
+    stroke-dasharray: 4 5;
+}
+
+
+/* =================================
+   Chart Line
+   ================================= */
+
+.chart-line {
+    fill: none;
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition:
+        stroke 0.3s ease;
+}
+
+
+/* Green line */
+
+.chart-positive {
+    stroke: #16a34a;
+}
+
+
+/* Red line */
+
+.chart-negative {
+    stroke: #dc2626;
+}
+
+
+/* =================================
+   Chart Point
+   ================================= */
+
+.chart-point {
+    fill: white;
+    stroke-width: 3;
+}
+
+
+.chart-positive-point {
+    stroke: #16a34a;
+}
+
+
+.chart-negative-point {
+    stroke: #dc2626;
+}
+
+
+/* =================================
+   Chart Tooltip
+   ================================= */
+
+.chart-tooltip {
+    position: absolute;
+
+    display: none;
+
+    /*
+       IMPORTANT:
+       Tooltip stays inside .price-chart
+    */
+
+    padding: 8px 12px;
+
+    background: #111827;
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.18);
+
+    z-index: 20;
+}
+
+
+.chart-tooltip-date {
+    color: #d1d5db;
+    margin-bottom: 3px;
+}
+
+
+.chart-tooltip-price {
+    color: white;
+    font-size: 14px;
+}
+
+
+/* =================================
+   Chart Header
+   ================================= */
+
+.chart-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 18px;
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    color: #6b7280;
+}
+
+
+.chart-header span:last-child {
+    color: #1f2937;
+    font-size: 14px;
+}
+
+
+/* =================================
+   Responsive
+   ================================= */
+
+@media (max-width: 700px) {
+
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 26px;
+    }
+
+
+    .search-section {
+        flex-direction: column;
+    }
+
+
+    #search-btn {
+        width: 100%;
+    }
+
+}
